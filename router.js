@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', ()=>{});
+const homeCtrl = require('./controller/home');
+
+router.get('/', homeCtrl.renderHome);
 router.get('/:albumName', ()=>{});
 router.post('/album/:albumName', ()=>{});
 
