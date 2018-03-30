@@ -29,15 +29,9 @@ module.exports.uploadImage = function (req, res, next) {
 
   // 获取具体要上传到哪个目录
   let albumName = req.params.albumName;
-
   let rootDir = req.app.locals.rootDir;
-
   let fullPath = path.join(rootDir,albumName);
-
-  //res.send(fullPath);
-
   let form = new formidable.IncomingForm();
-
   // 这个第三方包把文件暂时的放到了临时目录中
   form.parse(req, function(err, fields, files) {
     if (err) {
