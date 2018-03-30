@@ -6,6 +6,6 @@ const albumCtrl = require('./controller/album');
 
 router.get('/', homeCtrl.renderHome);
 router.get('/:albumName', albumCtrl.showAlbum);
-router.post('/album/:albumName', ()=>{});
+router.post('/album/:albumName', albumCtrl.uploadImage);
 
 module.exports = router;
